@@ -102,11 +102,38 @@ namespace WpfApp1Framework1
             }
 
             con.Close();
+           
 
         }
 
         private void TxtPID_TextChanged(object sender, TextChangedEventArgs e)
         {
+
+        }
+
+        private void BtnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            string ProdName = TxtProdName.Text;
+            string ProdPrice = TxtPrice.Text;
+            string ProdDiscount = TxtDiscount.Text;
+            string PID = TxtPID.Text;
+
+            sql = "Update ProductTable Set PName=@ProdName,PPrice=@ProdPrice,PDiscount=@ProdDiscount where PID= @PID  ";
+            con.Open();
+            cmd = new SqlCommand(sql, con);
+            cmd.Parameters.AddWithValue("@ProdName", ProdName);
+            cmd.Parameters.AddWithValue("@ProdPrice", ProdPrice);
+            cmd.Parameters.AddWithValue("@ProdDiscount", ProdDiscount);
+            cmd.Parameters.AddWithValue("@PID", PID);
+
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Record Updated");
+            con.Close();
+
+            TxtProdName.Clear();
+            TxtPrice.Clear();
+            TxtDiscount.Clear();
+            TxtProdName.Focus();
 
         }
     }
