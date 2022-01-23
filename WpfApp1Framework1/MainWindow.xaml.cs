@@ -31,7 +31,7 @@ namespace WpfApp1Framework1
         //String CS = "server=(local); Database=Products; Trusted_Connection=true";
         SqlConnection con = new SqlConnection("server=(local); Database=Products; Trusted_Connection=true");
         SqlCommand cmd;
-        //SqlDataReader rdr;
+        SqlDataReader rdr;
         string sql;
         private void TxtProdName_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -77,6 +77,36 @@ namespace WpfApp1Framework1
 
 
 
+
+        }
+
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            string PID = TxtPID.Text;
+            sql = " select * from ProductTable where PID= @PID";
+            con.Open();
+            cmd = new SqlCommand(sql, con);
+            cmd.Parameters.AddWithValue("@PID", PID);
+
+            rdr = cmd.ExecuteReader();
+
+            if(rdr.Read())
+            {
+                TxtProdName.Text=    rdr["PName"].ToString();
+                TxtPrice.Text = rdr["PPrice"].ToString();
+                TxtDiscount.Text = rdr["PDiscount"].ToString();
+            }
+            else
+            {
+                MessageBox.Show("ID not Found");
+            }
+
+            con.Close();
+
+        }
+
+        private void TxtPID_TextChanged(object sender, TextChangedEventArgs e)
+        {
 
         }
     }

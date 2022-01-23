@@ -11,9 +11,10 @@
             <Button x:Name="BtnSave" Content="SAVE" Height="94" Margin="0,0,681.8,0" FontWeight="Bold" FontSize="20" Click="BtnSave_Click"/>
             <TextBox x:Name="TxtProdName" Text=" prodctName" Height="75" TextWrapping="Wrap" Margin="479,0,7.8,0" FontSize="20" FontWeight="Bold" TextChanged="TxtProdName_TextChanged"/>
             <Button x:Name="BtnUpdate" Content="UPDATE" Height="51" Margin="0,0,761.6,0" FontWeight="Bold" FontSize="20"/>
-            <Button x:Name="btnSearch" Content="Search" Height="55" Margin="0,0,761.6,0" FontWeight="Bold" FontSize="20"/>
-            <TextBox x:Name="TxtPrice" Height="54" TextWrapping="Wrap" Text="Price" Margin="0,0,681.6,0" FontWeight="Bold" FontSize="20" TextChanged="TextBox_TextChanged"/>
-            <TextBox x:Name="TxtDiscount" Height="60" TextWrapping="Wrap" Text="Discounts" Margin="0,0,681.6,0" FontWeight="Bold" FontSize="20" TextChanged="TextBox_TextChanged_1"/>
+            <Button x:Name="btnSearch" Content="Search" Height="55" Margin="0,0,761.6,0" FontWeight="Bold" FontSize="20" Click="btnSearch_Click"/>
+            <TextBox x:Name="TxtPrice" Height="36" TextWrapping="Wrap" Text="Price" Margin="0,0,761.6,0" FontWeight="Bold" FontSize="20" TextChanged="TextBox_TextChanged"/>
+            <TextBox x:Name="TxtDiscount" Height="22" TextWrapping="Wrap" Text="Discounts" Margin="0,0,785.6,0" FontWeight="Bold" FontSize="20" TextChanged="TextBox_TextChanged_1"/>
+            <TextBox x:Name="TxtPID"   Height="26" TextWrapping="Wrap" Text="ID" Margin="0,0,789.6,0" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" FontSize="20" TextChanged="TxtPID_TextChanged"/>
 
         </StackPanel>
 
