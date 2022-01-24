@@ -136,5 +136,12 @@ namespace WpfApp1Framework1
             TxtProdName.Focus();
 
         }
+
+        private void BtnSecondWindow_Click(object sender, RoutedEventArgs e)
+        {
+            SecondMain secondMain = new SecondMain();
+            this.Hide();
+            secondMain.Show();
+        }
     }
 }
